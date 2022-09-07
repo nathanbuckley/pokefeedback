@@ -1,0 +1,30 @@
+{
+    "name": "pokefeedback",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sAnJohnson/pokefeedback.git"
+    },
+    "author": "Steven Johnson",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/sAnJohnson/pokefeedback/issues"
+    },
+    "homepage": "https://github.com/sAnJohnson/pokefeedback#readme",
+    "dependencies": {
+        "@hapi/boom": "^9.1.4",
+        "@hapi/hapi": "^20.2.1",
+        "@hapi/inert": "^6.0.5",
+        "@hapi/vision": "^6.1.0",
+        "concurrently": "^7.1.0",
+        "fs": "0.0.1-security",
+        "nodemon": "^2.0.19",
+        "nunjucks": "^3.2.3",
+        "path": "^0.12.7"
+    }
+}
