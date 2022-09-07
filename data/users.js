@@ -9,6 +9,11 @@ const users = [
                 category: "Test",
                 description: "He is the best!",
             },
+            {
+                id: "14235dfgdf3",
+                category: "Test",
+                description: "He is way better than the rest!",
+            },
         ],
     },
     {
