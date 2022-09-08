@@ -1,4 +1,5 @@
 @import "partials/var";
+@import "partials/nav";
 @import "partials/home";
 @import "partials/feedback";
 
@@ -10,7 +11,14 @@ body {
     grid-template-columns: auto;
     justify-items: stretch;
     align-items: stretch;
-    background-color: $Brandcolor3;
+    background: linear-gradient(
+        180deg,
+        $Brandcolor3 0%,
+        $Brandcolor3 40%,
+        $Brandcolor1 100%
+    );
+    font-family: $main-font;
+    color: $secondarycolor3;
 }
 
 header {
