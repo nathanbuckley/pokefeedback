@@ -1,14 +1,32 @@
-<div class="feedback">
-    <form id="feedback-form">
-        <label for="feedbackInput">Give {{ user.name }} some juicy feedback!</label>
-        <input type="text" id="feedbackInput" placeholder="Give Feedback :)">
-        <button type="submit" id="feedback-submit">Submit</button>
-    </form>
-    <div class="feedback-holder" id="feedback-holder"></div>
-
-    {# {% for item in user.feedback %}
-        <p>{{ item.description }}</p>
+{% block scripts %}
+    <script src="/static/scripts/feedback.js" defer></script>
+{% endblock scripts %}
+<div id="feedback">
+    {% if user.id == 0 %}
+        <form id="feedback-form">
+            <label for="feedbackInput">Give {{ user.name }} some juicy feedback!</label>
+            <input type="text" id="feedbackInput" placeholder="Give Feedback :)">
+            <button type="submit" id="feedback-submit">Submit</button>
+        </form>
+        <div class="feedback-holder" id="feedback-holder"></div>
     {% else %}
-        <p>No feedback yet, (you're rubbish!)</p>
-    {% endfor %} #}
+        <form id="feedback-form">
+            <label for="feedbackInput">Give {{ user.name }} some juicy feedback!</label>
+            <input type="text" id="feedbackInput" placeholder="Give Feedback :)">
+            <button type="submit" id="feedback-submit">Submit</button>
+        </form>
+        <div class="feedback-holder" id="feedback-holder">
+            {% for item in user.feedback %}
+                <div class="feedback">
+                    <div class="content feedback-{{item.id}}">{{ item.description}}
+                        <button data-id="{{item.id}}" id="like-button">Like</button>
+                        <p> Likes: <span id="like-counter-{{item.id}}">{{item.likes}}</span>
+                        </p>
+                    </div>
+                </div>
+            {% else %}
+                <p>No feedback yet, (you're rubbish!)</p>
+            {% endfor %}
+        </div>
+    {% endif %}
 </div>

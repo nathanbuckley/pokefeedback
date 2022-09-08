@@ -10,9 +10,9 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         {# <link rel="icon" href="/public/images/favicon.ico"> #}
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-        <script src="/static/scripts/feedback.js" defer></script>
+        {% block scripts%}{% endblock %}
     </head>
-    <body{% if bodyClass %} class="{{ bodyClass }}-page"{% endif %}>
+    <body{% if bodyClass %} id="body" class="{{ bodyClass }}-page"{% endif %}>
         <header>
             {% include "partials/layout/_nav.njk" %}
         </header>
