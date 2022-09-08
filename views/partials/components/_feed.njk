@@ -2,18 +2,18 @@
     {# <div class="feed__header">
         <h1>Feed</h1>
     </div> #}
-    <div class="">
-        {% for item in userData %}
-            <div>
-                <a href="/{{ item.id }}">
-                    <img src="" alt="">
-                    <h2>{{ item.name }}</h2>
-                </a>
 
-            </div>
+    {% for item in userData %}
+        <div>
+            <a href="/{{ item.id }}">
+                <img src={{ item.image }} alt="">
+                <h2>{{ item.name }}</h2>
+            </a>
 
-        {% else %}
-            <li>Item list is empty</li>
-        {% endfor %}
-    </div>
+        </div>
+
+    {% else %}
+        <li>Item list is empty</li>
+    {% endfor %}
+
 </div>

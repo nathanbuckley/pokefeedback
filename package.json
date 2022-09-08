@@ -5,8 +5,8 @@
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "dev": "nodemon -e njk,js index.js",
-        "buildsass": "sass --watch src/css/main.scss dist/css/main.css" 
+        "dev": "concurrently \"nodemon -e njk,js app.js\" \"sass --watch src/css/main.scss dist/css/main.css\"",
+        "buildsass": "sass --watch src/css/main.scss dist/css/main.css"
     },
     "repository": {
         "type": "git",

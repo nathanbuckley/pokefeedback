@@ -1,7 +1,9 @@
 @import "partials/var";
+@import "partials/home";
+@import "partials/feedback";
 
-body{
-    height:100vh;
+body {
+    height: 100vh;
     margin: 0%;
     display: grid;
     grid-template-rows: auto auto;
@@ -11,7 +13,7 @@ body{
     background-color: $Brandcolor3;
 }
 
-header{
+header {
     grid-row: 1 / span 1;
     display: flex;
     flex-direction: row;
@@ -19,5 +21,5 @@ header{
     align-items: center;
 }
 
-.nav-logo{
+.nav-logo {
 }
