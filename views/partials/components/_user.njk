@@ -4,14 +4,14 @@
 <div id="feedback">
     {% if user.id == 0 %}
         <form id="feedback-form">
-            <label for="feedbackInput">Give {{ user.name }} some juicy feedback!</label>
+            <label for="feedbackInput">Give {{ user.name }} some feedback!</label>
             <input type="text" id="feedbackInput" placeholder="Give Feedback :)">
             <button type="submit" id="feedback-submit">Submit</button>
         </form>
         <div class="feedback-holder" id="feedback-holder"></div>
     {% else %}
         <form id="feedback-form">
-            <label for="feedbackInput">Give {{ user.name }} some juicy feedback!</label>
+            <label for="feedbackInput">Give {{ user.name }} some feedback!</label>
             <input type="text" id="feedbackInput" placeholder="Give Feedback :)">
             <button type="submit" id="feedback-submit">Submit</button>
         </form>

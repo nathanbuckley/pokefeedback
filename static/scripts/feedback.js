@@ -90,7 +90,8 @@ let feedbackLongList = [
 ];
 
 let shuffled = feedbackLongList.sort(() => 0.5 - Math.random());
-let feedbackList = shuffled.slice(0, 5);
+const rndInt = randomIntFromInterval(3, 6);
+let feedbackList = shuffled.slice(0, rndInt);
 
 feedbackForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -103,7 +104,7 @@ feedbackForm.addEventListener("submit", (e) => {
         id: new Date().getTime(),
         likes: 0,
     };
-    feedbackList.push(newFeedback);
+    feedbackList.unshift(newFeedback);
     feedbackInput.value = "";
     feedbackInput.focus();
 
@@ -113,7 +114,7 @@ feedbackForm.addEventListener("submit", (e) => {
 function renderFeedback() {
     html = feedbackList
         .map((feedback) => {
-            return `<div class="feedback"><div class="content feedback-${feedback.id}">${feedback.value}<button data-id="${feedback.id}" id="like-button">Like</button><p> Likes: <span id="like-counter-${feedback.id}">${feedback.likes}</span> </p></div></div>`;
+            return `<div class="feedback"><div class="content feedback-${feedback.id}">${feedback.value}<div class="buttons"><button data-id="${feedback.id}" id="like-button" class="like-button -${feedback.id}"></button><p> Likes: <span id="like-counter-${feedback.id}">${feedback.likes}</span> </p></div></div></div>`;
         })
         .join("");
     feedbackHolder.innerHTML = html;
@@ -121,16 +122,25 @@ function renderFeedback() {
 
 feedback.addEventListener("click", (e) => {
     const el = e.target;
+
     if (!el.dataset.id) return;
+    if (el.classList.contains("clicked")) return;
+
     if (el.id === "like-button") {
         const id = parseInt(el.dataset.id);
         for (const obj of feedbackList) {
             if (obj.id === id) {
+                el.classList.add("clicked");
                 obj.likes++;
+                renderFeedback();
             }
         }
-        renderFeedback();
     }
 });
 
 renderFeedback();
+
+function randomIntFromInterval(min, max) {
+    // min and max included
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
