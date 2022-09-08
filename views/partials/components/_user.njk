@@ -1,6 +1,6 @@
 <div class="feedback">
-    {% for feedback in item.feedback %}
-        <p>{{ feedback.description }}</p>
+    {% for item in feedbackData %}
+        <p>{{ item.description }}</p>
     {% else %}
         <p>No feedback yet, (you're rubbish!)</p>
     {% endfor %}
