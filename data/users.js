@@ -8,11 +8,13 @@ const users = [
                 id: "142353",
                 category: "Test",
                 description: "He is the best!",
+                likes: "",
             },
             {
                 id: "14235dfgdf3",
                 category: "Test",
                 description: "He is way better than the rest!",
+                likes: "",
             },
         ],
     },
