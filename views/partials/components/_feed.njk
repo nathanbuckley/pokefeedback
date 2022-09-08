@@ -12,13 +12,11 @@
         {% endfor %} #}
         {% for item in userData %}
             <div>
-                <h2>{{ item.name }}</h2>
-                <p>Feedback</p>
-                {% for feedback in item.feedback %}
-                    <p>{{ feedback.description }}</p>
-                {% else %}
-                    <p>No feedback yet (you're rubbish!)</p>
-                {% endfor %}
+                <a href="/{{ item.id }}">
+                    <img src="" alt="">
+                    <h2>{{ item.name }}</h2>
+                </a>
+
             </div>
         {% else %}
             <li>Item list is empty</li>
