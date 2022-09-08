@@ -1,0 +1,10 @@
+body {
+  height: 100vh;
+  margin: 0%;
+  display: grid;
+  justify-items: stretch;
+  align-items: stretch;
+  background-color: #efeff0;
+}
+
+/*# sourceMappingURL=main.css.map */
