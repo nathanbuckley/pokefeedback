@@ -1,7 +1,14 @@
 <div class="feedback">
-    {% for item in user.feedback %}
+    <form id="feedback-form">
+        <label for="feedbackInput">Give {{ user.name }} some juicy feedback!</label>
+        <input type="text" id="feedbackInput" placeholder="Give Feedback :)">
+        <button type="submit" id="feedback-submit">Submit</button>
+    </form>
+    <div class="feedback-holder" id="feedback-holder"></div>
+
+    {# {% for item in user.feedback %}
         <p>{{ item.description }}</p>
     {% else %}
         <p>No feedback yet, (you're rubbish!)</p>
-    {% endfor %}
+    {% endfor %} #}
 </div>

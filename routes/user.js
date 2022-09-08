@@ -2,13 +2,6 @@ const path = require("path");
 const feedbackData = require("../data/users");
 
 module.exports = [
-    // {
-    //     method: "GET",
-    //     path: "/{userId}",
-    //     handler: (request, h) => {
-    //         return h.view("user", { feedbackData });
-    //     },
-    // },
     {
         method: "GET",
         path: "/{userId}",
